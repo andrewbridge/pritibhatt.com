@@ -1,8 +1,6 @@
 module.exports = function(eleventyConfig) {
   // Pass through images and CSS
-  eleventyConfig.addPassthroughCopy({ "./public/": "/" }, { debug: true });
-  eleventyConfig.addPassthroughCopy("src/css");
-  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy({ "src/public": "/" });
 
   // Create a collection for publications/awards
   eleventyConfig.addCollection("publications", function(collectionApi) {
