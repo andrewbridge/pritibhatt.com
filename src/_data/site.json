@@ -1,0 +1,19 @@
+{
+  "title": "Priti Bhatt - Wound Care Specialist",
+  "name": "Priti Bhatt",
+  "role": "Wound Care Specialist & Consultant",
+  "bio": "Experienced Lead with a demonstrated history of working in the hospital & community health care industry. Skilled in Tissue viability, non-medical prescribing, Nursing, Healthcare, and Public Health. Strong professional with a BSC focused on Tissue Viability from The University of Hull.",
+  "photo": "/images/priti-bhatt.jpg",
+  "links": [
+    {
+      "type": "linkedin",
+      "url": "https://www.linkedin.com/in/priti-bhatt-54186490/",
+      "label": "LinkedIn"
+    },
+    {
+      "type": "email",
+      "url": "/contact",
+      "label": "Contact"
+    }
+  ]
+}

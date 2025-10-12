@@ -1,0 +1,54 @@
+---
+layout: base.njk
+title: Priti Bhatt - Wound Care Specialist
+---
+
+<div class="hero">
+  <div class="profile">
+    <img src="{{ site.photo }}" alt="{{ site.name }}" class="profile-photo">
+    <h1>{{ site.name }}</h1>
+    <p class="role">{{ site.role }}</p>
+    <p class="bio">{{ site.bio }}</p>
+  </div>
+
+  <div class="links">
+    {% for link in site.links %}
+    <a href="{{ link.url }}" class="icon-link icon-link--{{ link.type }}" 
+       {% if link.type == 'linkedin' %}target="_blank" rel="noopener noreferrer"{% endif %}
+       aria-label="{{ link.label }}">
+      {% if link.type == 'linkedin' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      {% elif link.type == 'email' %}
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      {% endif %}
+      <span class="icon-label">{{ link.label }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<section class="publications">
+  <h2>Publications &amp; Awards</h2>
+  <ul class="publications-list">
+    {% for item in collections.publications %}
+    <li class="publication-item">
+      <h3 class="publication-title">
+        {% if item.data.link %}
+        <a href="{{ item.data.link }}" target="_blank" rel="noopener noreferrer">{{ item.data.title }}</a>
+        {% else %}
+        {{ item.data.title }}
+        {% endif %}
+      </h3>
+      {% if item.data.year or item.data.date %}
+      <span class="publication-year">{{ item.data.year or item.data.date }}</span>
+      {% endif %}
+      <div class="publication-description">{{ item.templateContent | safe }}</div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

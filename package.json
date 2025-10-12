@@ -1,0 +1,12 @@
+{
+  "name": "pritibhatt.com",
+  "version": "1.0.0",
+  "description": "Professional website for Priti Bhatt, Wound Care Specialist",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
